@@ -1,3 +1,8 @@
+.game {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .memory-card {
   background-color: #f25a70;
   border-radius: 30px;
@@ -7,8 +12,28 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 31px;
 }
 
 .memory-card > .icon {
   width: 100px;
+}
+
+.memory-card.-back {
+  background-color: #fff;
+}
+
+.memory-card.-back > .circle {
+  height: 94px;
+  width: 95px;
+  background-color: #d4d4d4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.memory-card.-back > .circle > .icon {
+  margin-bottom: 15px;
+  width: 97px;
 }
