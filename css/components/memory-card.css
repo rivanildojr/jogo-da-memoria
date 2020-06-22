@@ -1,8 +1,10 @@
 .game {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 155px);
+  gap: 16px 31px;
   justify-content: center;
-  flex-flow: row wrap;
   margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .memory-card {
@@ -15,10 +17,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.memory-card + .memory-card {
-  margin-left: 31px;
 }
 
 .memory-card > .icon {
