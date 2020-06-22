@@ -1,6 +1,8 @@
 .game {
   display: flex;
+  justify-content: center;
   flex-flow: row wrap;
+  margin-top: 16px;
 }
 
 .memory-card {
@@ -12,6 +14,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+
+.memory-card + .memory-card {
   margin-left: 31px;
 }
 
@@ -19,21 +25,20 @@
   width: 100px;
 }
 
-.memory-card.-back {
+.memory-card.-front {
   background-color: #fff;
 }
 
-.memory-card.-back > .circle {
+.memory-card.-front::before {
+  content: "";
   height: 94px;
   width: 95px;
   background-color: #d4d4d4;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: absolute;
 }
 
-.memory-card.-back > .circle > .icon {
-  margin-bottom: 15px;
-  width: 97px;
+.memory-card.-front > .icon {
+  position: absolute;
+  transform: translateY(-12px);
 }
