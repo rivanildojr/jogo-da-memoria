@@ -1,12 +1,3 @@
-.game {
-  display: grid;
-  grid-template-columns: repeat(2, 155px);
-  gap: 16px 31px;
-  justify-content: center;
-  margin-top: 16px;
-  margin-bottom: 16px;
-}
-
 .memory-card {
   background-color: #f25a70;
   border-radius: 30px;
