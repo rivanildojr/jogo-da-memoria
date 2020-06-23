@@ -13,8 +13,7 @@
 //   return $memoryCard;
 // }
 
-function createMemoryCard() {
-  const $memoryCard = `
+const createMemoryCard = () => `
     <article class="memory-card">
       <img 
         src='img/icon-collabcode.png' 
@@ -25,11 +24,7 @@ function createMemoryCard() {
     </article>
   `;
 
-  return $memoryCard;
-}
-
-function createMemoryCardFront() {
-  const $memoryCard = `
+const createMemoryCardFront = () => `
     <article class="memory-card -front">
       <img 
         src='img/icon-c.png' 
@@ -39,9 +34,6 @@ function createMemoryCardFront() {
       />
     </article>
   `;
-
-  return $memoryCard;
-}
 
 function handleClick() {
   console.log("ae");
