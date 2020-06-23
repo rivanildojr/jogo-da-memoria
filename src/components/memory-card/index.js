@@ -13,22 +13,15 @@
 //   return $memoryCard;
 // }
 
-const createMemoryCard = () => `
-    <article class="memory-card">
+const createMemoryCard = (
+  variation = "",
+  img = "icon-collabcode.png",
+  alt = "Gueio mascote da Collabcode"
+) => `
+    <article class="memory-card ${variation}">
       <img 
-        src='img/icon-collabcode.png' 
-        alt='Gueio mascote da Collabcode' 
-        class='icon'
-        onClick="handleClick()"
-      />
-    </article>
-  `;
-
-const createMemoryCardFront = () => `
-    <article class="memory-card -front">
-      <img 
-        src='img/icon-c.png' 
-        alt='ícone de um livro da linguagem C++' 
+        src='img/${img}' 
+        alt=${alt} 
         class='icon'
         onClick="handleClick()"
       />
