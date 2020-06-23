@@ -1,22 +1,14 @@
 const $root = document.querySelector("#root");
 
-const $iconC = `<img 
-      src='img/icon-c.png' 
-      alt='ícone de um livro da linguagem C++' 
-      class='icon'
-    />`;
+const $cardsWrapper = createCardsWrapper();
+const $memoryCard = createMemoryCard();
+const $memoryCardFront = createMemoryCardFront();
 
-const $icon = `<img 
-    src='img/icon-collabcode.png' 
-    alt='Gueio mascote da Collabcode' 
-    class='icon'
-  />`;
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
+$cardsWrapper.insertAdjacentHTML("beforeend", $memoryCardFront);
 
-$root.insertBefore($wrapCards, null);
+$root.insertAdjacentElement("beforeend", $cardsWrapper);
 
-createMemoryCard($iconC, "-front");
-createMemoryCard($iconC, "-front");
-
-for (let index = 0; index < 18; index++) {
-  createMemoryCard($icon);
+for (let index = 0; index < 6; index++) {
+  $cardsWrapper.insertAdjacentHTML("beforeend", $memoryCard);
 }

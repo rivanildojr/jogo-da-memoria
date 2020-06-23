@@ -1,13 +1,48 @@
-function createMemoryCard($icon, variation = "") {
-  const $memoryCard = document.createElement("article");
+// function createMemoryCard($icon, variation = "") {
 
-  if (variation != "") {
-    $memoryCard.classList.add("memory-card", variation);
-  }
+//   const $memoryCard = document.createElement("article");
 
-  $memoryCard.classList.add("memory-card");
+//   if (variation != "") {
+//     $memoryCard.classList.add("memory-card", variation);
+//   }
 
-  $wrapCards.insertAdjacentElement("afterbegin", $memoryCard);
+//   $memoryCard.classList.add("memory-card");
 
-  $memoryCard.insertAdjacentHTML("afterbegin", $icon);
+//   $memoryCard.insertAdjacentHTML("afterbegin", $icon);
+
+//   return $memoryCard;
+// }
+
+function createMemoryCard() {
+  const $memoryCard = `
+    <article class="memory-card">
+      <img 
+        src='img/icon-collabcode.png' 
+        alt='Gueio mascote da Collabcode' 
+        class='icon'
+        onClick="handleClick()"
+      />
+    </article>
+  `;
+
+  return $memoryCard;
+}
+
+function createMemoryCardFront() {
+  const $memoryCard = `
+    <article class="memory-card -front">
+      <img 
+        src='img/icon-c.png' 
+        alt='ícone de um livro da linguagem C++' 
+        class='icon'
+        onClick="handleClick()"
+      />
+    </article>
+  `;
+
+  return $memoryCard;
+}
+
+function handleClick() {
+  console.log("ae");
 }
