@@ -1,30 +1,23 @@
-// function createMemoryCard($icon, variation = "") {
-
-//   const $memoryCard = document.createElement("article");
-
-//   if (variation != "") {
-//     $memoryCard.classList.add("memory-card", variation);
-//   }
-
-//   $memoryCard.classList.add("memory-card");
-
-//   $memoryCard.insertAdjacentHTML("afterbegin", $icon);
-
-//   return $memoryCard;
-// }
-
 const memoryCard = () => {
   styles();
 
   return ({ nameClass, src, alt }) => ` 
-    <article class="memory-card ${nameClass}">
-      <img 
-        src='${src}' 
-        alt=${alt} 
-        class='icon'
-        onClick="handleClick()"
-      />
-    </article>
+    <div class="card" onClick="handleClick(this)">
+      <article class="memory-card -active" >
+        <img 
+          src="img/icon-collabcode.png"
+          alt="Gueio Mascote da CollabCode"
+          class='icon'
+        />        
+      </article>
+      <article class="memory-card ${nameClass}">
+        <img 
+          src='${src}' 
+          alt=${alt} 
+          class='icon'
+        />     
+      </article>
+    </div>
   `;
 };
 
@@ -33,6 +26,9 @@ function styles() {
   const $styles = document.createElement("style");
   $styles.textContent = `
     .memory-card {
+      display: none;
+    }
+    .memory-card.-active {
       background-color: #f25a70;
       border-radius: 30px;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
@@ -45,15 +41,15 @@ function styles() {
       cursor: pointer;
     }
 
-    .memory-card > .icon {
+    .memory-card.-active > .icon {
       width: 100px;
     }
 
-    .memory-card.-front {
+    .memory-card.-active.-front {
       background-color: #fff;
     }
 
-    .memory-card.-front::before {
+    .memory-card.-active.-front::before {
       content: "";
       height: 94px;
       width: 95px;
@@ -62,7 +58,7 @@ function styles() {
       position: absolute;
     }
 
-    .memory-card.-front > .icon {
+    .memory-card.-active.-front > .icon {
       position: absolute;
       transform: translateY(-12px);
     }
@@ -71,6 +67,8 @@ function styles() {
   $head.insertAdjacentElement("beforeend", $styles);
 }
 
-function handleClick() {
-  console.log("ae");
+function handleClick(e) {
+  const $children = e.children;
+  $children[0].classList.toggle("-active");
+  $children[1].classList.toggle("-active");
 }

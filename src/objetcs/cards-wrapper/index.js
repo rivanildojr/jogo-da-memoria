@@ -14,7 +14,7 @@ function createCardsWrapper() {
       padding-bottom: 16px;
     }
 
-    .cards-wrapper > .memory-card {
+    .cards-wrapper > .card {
       margin-bottom: 16px;
     }
   `;
