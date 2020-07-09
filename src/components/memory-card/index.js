@@ -13,7 +13,10 @@
 //   return $memoryCard;
 // }
 
-const createMemoryCard = ({ nameClass, src, alt }) => `
+const memoryCard = () => {
+  styles();
+
+  return ({ nameClass, src, alt }) => ` 
     <article class="memory-card ${nameClass}">
       <img 
         src='${src}' 
@@ -23,6 +26,7 @@ const createMemoryCard = ({ nameClass, src, alt }) => `
       />
     </article>
   `;
+};
 
 function styles() {
   const $head = document.querySelector("head");
@@ -66,8 +70,6 @@ function styles() {
 
   $head.insertAdjacentElement("beforeend", $styles);
 }
-
-styles();
 
 function handleClick() {
   console.log("ae");
