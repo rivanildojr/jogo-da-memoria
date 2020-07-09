@@ -1,21 +1,21 @@
 const memoryCard = () => {
   styles();
 
-  return ({ nameClass, src, alt }) => ` 
-    <div class="card" onClick="handleClick(this)">
-      <article class="memory-card -active" >
-        <img 
-          src="img/icon-collabcode.png"
-          alt="Gueio Mascote da CollabCode"
-          class='icon'
-        />        
-      </article>
-      <article class="memory-card ${nameClass}">
+  return ({ src, alt }) => ` 
+    <div class="memory-card" onClick="handleClick(this)">
+      <article class="card -front">
         <img 
           src='${src}' 
           alt=${alt} 
           class='icon'
         />     
+      </article>
+      <article class="card" >
+        <img 
+          src="img/icon-collabcode.png"
+          alt="Gueio Mascote da CollabCode"
+          class='icon'
+        />        
       </article>
     </div>
   `;
@@ -26,30 +26,41 @@ function styles() {
   const $styles = document.createElement("style");
   $styles.textContent = `
     .memory-card {
-      display: none;
+      height: 155px;
+      width: 155px;
+      position: relative;
     }
-    .memory-card.-active {
+    .memory-card .card {
       background-color: #f25a70;
       border-radius: 30px;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-      height: 155px;
-      width: 155px;
+      height: 100%;
+      width: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
       position: relative;
       cursor: pointer;
+      position: absolute;
     }
 
-    .memory-card.-active > .icon {
+    .memory-card.-active .card {
+      display: none;
+    }
+
+    .memory-card.-active .card.-front {
+      display: flex;
+    }
+
+    .memory-card .card > .icon {
       width: 100px;
     }
 
-    .memory-card.-active.-front {
+    .memory-card .card.-front {
       background-color: #fff;
     }
 
-    .memory-card.-active.-front::before {
+    .memory-card .card.-front::before {
       content: "";
       height: 94px;
       width: 95px;
@@ -58,7 +69,7 @@ function styles() {
       position: absolute;
     }
 
-    .memory-card.-active.-front > .icon {
+    .memory-card .card.-front > .icon {
       position: absolute;
       transform: translateY(-12px);
     }
@@ -67,8 +78,4 @@ function styles() {
   $head.insertAdjacentElement("beforeend", $styles);
 }
 
-function handleClick(e) {
-  const $children = e.children;
-  $children[0].classList.toggle("-active");
-  $children[1].classList.toggle("-active");
-}
+const handleClick = ($element) => $element.classList.toggle("-active");

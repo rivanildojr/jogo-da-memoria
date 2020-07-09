@@ -5,27 +5,22 @@ const $cardsWrapper = createCardsWrapper();
 const createMemoryCard = memoryCard();
 
 const $memoryCardC = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-c.png",
   alt: "Icone do Livro da Linguagem C++",
 });
 const $memoryCardBug = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-bug.png",
   alt: "Icone de um bug",
 });
 const $memoryCardJs = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-js.png",
   alt: "Icone do Livro da Linguagem JS",
 });
 const $memoryCardJava = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-java.png",
   alt: "Icone do Livro da Linguagem Java",
 });
 const $memoryCardPhp = createMemoryCard({
-  nameClass: "-front",
   src: "img/icon-php.png",
   alt: "Icone do Livro da Linguagem PHP",
 });
